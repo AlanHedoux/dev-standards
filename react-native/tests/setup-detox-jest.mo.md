@@ -1,4 +1,4 @@
-# [MO] Set up Detox with Jest and automate it on Bitrise *(~ 1h)*
+# [MO] Set up Detox with Jest and automate it on Bitrise *(~ 1h30)*
 
 ## Owner: [Alban Depretz](https://github.com/chdeps)
 
@@ -32,10 +32,10 @@ brew install applesimutils
   ```sh
   npm install -g detox-cli
   ```
-  
+
 > TIP: `detox -h` gives the list of available commands
 
-### Step 2: Add Detox to your project *(~5mins)*
+### Step 2: Add Detox to your project *(~10mins)*
 
 #### 1. Add Detox to your project
 
@@ -64,10 +64,10 @@ For iOS apps in a workspace (eg: CocoaPods) use `-workspace ios/example.xcworksp
 
 Also make sure the simulator model specified under the key `"name"` (`iPhone 7` above) is actually available on your machine (it was installed by Xcode). Check this by typing `xcrun simctl list` in terminal to display all available simulators.
 
-> TIP: To test a release version, replace 'Debug' with 'Release' in the binaryPath and build properties. 
+> TIP: To test a release version, replace 'Debug' with 'Release' in the binaryPath and build properties.
 
 
-### Step 3: Write your 1st test *(~10mins)*
+### Step 3: Write your 1st test *(~20mins)*
 
 #### 1. Configure Detox to run on Jest
 
@@ -97,7 +97,8 @@ import detox from 'detox';
 import packageFile from '../package.json';
 const detoxConfig = packageFile.detox;
 
-//Adapt value depending on maximum amount of time your tests take. In our case the CI will wait 2mins before failing. 
+//Adapt the value. If it is too short your tests won't have time to run. If it's too long on the other hand, it will hang for too long before it fails.
+//120000 is a good default value to start with
 jest.setTimeout(120000);
 
 beforeAll(async () => {
@@ -125,9 +126,11 @@ beforeEach(async () => {
 }
 ```
 
-> NOTE: Here I'm matching all files that end in `.e2e.js` 
+> NOTE: Here I'm matching all files that end in `.e2e.js`
 
-* Add a testID to your built in RN component
+* Add a testID to your component.
+
+> Custom component: Detox will only find components thanks to their testID if they directly come from react-native. Make sure your custom components transfer the testID prop to a **built-in** react-native component such as Text, TouchableOpacity, ...
 
 ```js
 <Text testID="title">Your Title</Text>
@@ -142,7 +145,7 @@ describe('Test 1st screen', () => {
 });
 ```
 
-### Step 4: Run tests *(~5mins)*
+### Step 4: Run tests *(~10mins)*
 
 * Add to your `package.json`:
 
@@ -161,7 +164,7 @@ npm run test:e2e:debug:build
 npm run test:e2e:debug
 ```
 
-### Step 5: Add compatibility with eslint (Optional) *(~5mins)*
+### Step 5: Add compatibility with eslint (Optional) *(~10mins)*
 
 #### 1. Add eslint plugin eslint-plugin-detox
 
@@ -193,6 +196,10 @@ npm install eslint-plugin-detox --save-dev
 
 ## Troubleshooting
 
+#### If an element of the UI cannot be found even if you gave it a testID.
+
+* Detox will only find components thanks to their testID if they directly come from react-native. Make sure your custom components transfer the testID prop to a **built-in** react-native component such as Text, TouchableOpacity, ...
+
 #### If an element of the UI cannot be found after a transition.
 
 * waitFor & withTimeout (In our example, you wait for two seconds before checking for the title)
@@ -211,7 +218,7 @@ await waitFor(element(by.id('title'))).toExist().withTimeout(2000);
   await device.enableSynchronization();
 ```
 
-> NOTE: Sometimes the synchronization engine is stuck on a never ending asynchronous activity. Use --debug-synchronization to debug synchronization issues 
+> NOTE: Sometimes the synchronization engine is stuck on a never ending asynchronous activity. Use --debug-synchronization to debug synchronization issues
 
 ## Example application
 

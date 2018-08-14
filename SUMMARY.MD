@@ -13,11 +13,17 @@
     - [[MO] Create a model and an api route](/backend/django/create-model-and-api.mo.md)
   - GraphQL JS
     - [[MO] Kick start a JS GraphQL 3 layers API with Apollo-server, Dataloader and Knex](/backend/graphql-js/getting-started-with-apollo-server-dataloader-knex.mo.md)
+  - Node JS
+    - [[Standard] Add multiple environments configuration on loopback](/backend/node-js/add-multiple-environments-configuration-on-loopback.s.md)
+    - [[Standard] Handle Errors and Exceptions in Javascript](/backend/node-js/handle-errors-and-exceptions-in-javascript.s.md)
 - Code Quality
   - [[MO] Test your React and React Native components' state with Jest (without Enzyme)](/code-quality/components-state-testing.mo.md)
   - [[Standard] Test files indentation](/code-quality/test-files-indentation.s.md)
+  - [[MO] How to use mocks with jest (~2min)](/code-quality/mock-with-jest.mo.md)
+  - [[MO] Set up Detox with Jest and automate it on Bitrise _(~ 1h)_](/react-native/tests/setup-detox-jest.mo.md)
+  - [[Standard] Handle Errors and Exceptions in Javascript](/backend/node-js/handle-errors-and-exceptions-in-javascript.s.md)
 - Flowtype
- - [[Standard] Flowtype](/flowtype/flowtype.s.md)
+- [[Standard] Flowtype](/flowtype/flowtype.s.md)
 - Project Standards
   - [Project Success](/project-standards/project-success/index.md)
     - [[Standard] Deployed in production](/project-standards/project-success/production.s.md)
@@ -26,6 +32,8 @@
     - [[Standard] Easy project installation](/project-standards/technical-agility/under-15-minutes-project-installation.s.md)
     - [[Standard] Up to date dependencies](/project-standards/technical-agility/up-to-date-dependencies.s.md)
     - [[Standard] The tests' standards of my framework are respected](/project-standards/technical-agility/react-native-test.s.md)
+  - [Taking over an existing project](/project-standards/taking-over-project/index.md)
+    - [[MO] Migrating to new certificates](/project-standards/taking-over-project/migrate-to-new-ios-certificates.mo.md)
 - Successful Sprint
   - Coding
     - [[Standard] Good practices to resolve a ticket](/successful-sprint/coding/plan-your-ticket-to-improve-efficency.s.md)
@@ -33,19 +41,25 @@
   - Setup
     - [[MO] Adding a native module](/react-native/setup/add-native-module.mo.md)
     - [[MO] Setup & Deploy New Project to Staging](/react-native/setup/setup-and-deploy-new-project-to-staging.mo.md)
+    - [[MO] Deploy Project to Production - Android Play Store](/react-native/setup/deploy-to-production-android.mo.md)
     - [[MO] Setup & Deploy New Project to Staging with HockeyApp (Deprecated)](/react-native/setup/setup-and-deploy-new-project-to-staging-with-hockeyapp.mo.md)
     - [[MO] Setup Code-Push on an existing project](/react-native/setup/setup-code-push.mo.md)
     - [[MO] Add Cocoapods to your project (~10min)](/react-native/setup/add-cocoapods.mo.md)
     - [[MO] Setup Firebase with multiple environments (~1h)](/react-native/setup/setup_firebase_multiple_envs.mo.md)
     - [[MO] Setup Facebook login](/react-native/setup/setup-facebook-login.mo.md)
     - [[MO] Setup Stripe Payment Form](/react-native/setup/setup-stripe-dev-standard.mo.md)
+    - [[MO] Set up Detox with Jest and automate it on Bitrise _(~ 1h)_](/react-native/tests/setup-detox-jest.mo.md)
     - [[MO] Patch React Native Android](/react-native/setup/patch-react-native-android.mo.md)
     - [[MO] Remove Default Android Permissions Android](/react-native/setup/remove-unnecessary-android-permissions.mo.md)
     - [[MO] use http links in react native](/react-native/use_http_links_in_react_native.mo.md)
     - [[Standard] Override an existing app](/react-native/setup/overriding-existing-app.s.md)
   - Architecture
+    - [[Standard] Default stack](/react-native/architecture/default-stack.s.md)
     - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
     - [[Standard] File Naming](/react-native/architecture/file-naming.s.md)
+    - [[Standard] Handle Errors and Exceptions in Javascript](/backend/node-js/handle-errors-and-exceptions-in-javascript.s.md)
+  - Animations
+    - [[Standard] React Native animations](/react-native/animations/react-native-animations.s.md)
   - Debugging
     - [[MO] Debug Javascript Code](/react-native/debugging/debug-javascript.mo.md)
     - [[MO] Debug Native Android Code](/react-native/debugging/debug-native-android.mo.md)
@@ -55,31 +69,61 @@
     - [[MO] Handle gradle dependencies versions clashes](/react-native/debugging/handle-gradle-dependencies-clash.mo.md)
     - [[MO] Debug two iOS apps simultaneously](/react-native/debugging/debug-two-ios-apps-simultaneously.mo.md)
     - [[MO] Get iOS Logs](/react-native/debugging/get-ios-logs.mo.md)
+    - [[MO] How to analyse and react to a bug on a React-Native project](/react-native/debugging/analyse-bug.mo.md)
   - React
     - [[Standard] Binding functions in A React component](/react-native/react/binding-functions-in-react-component.s.md)
     - [[MO] Enable component overflow on Android](/react-native/react/enable-overflow-android.mo.md)
-  - Redux
-    - [[MO] Custom fields with redux-form](/react-native/redux/custom-redux-form-field.mo.md)
-    - [[Package] Factorise common Redux async boilerplate with redux-async-actions-factory](https://github.com/bamlab/redux-async-actions-factory)
-    - [[MO] Pass props to a container](/react-native/redux/pass-props-to-container.mo.md)
   - Features
     - [[Article] Add a sharing feature to the app](https://blog.bam.tech/developper-news/sharing-content-with-react-native)
     - [[MO] Lock the device orientation](/react-native/features/lock-device-orientation.mo.md)
     - [[MO] Preloading MobX data with AsyncStorage](/react-native/features/asyncstorage.mo.md)
+    - [[MO] Implement offline with MobX](/react-native/features/offline-mobx.mo.md)
+    - [[MO] Implement offline with Redux](/react-native/features/offline-redux.mo.md)
+    - [[Standard] Implementing a clean logout](/react-native/features/clean-logout.s.md)
+    - [[MO] Get the size or position of a component with onLayout](/react-native/react/get-element-size-or-position-with-onLayout.mo.md)
   - Package Dependencies
     - [[MO] Handle dependencies with Yarn override](/react-native/package-dependencies/handle-dependencies-with-yarn-override.mo.md)
   - Update
     - [[MO] Upgrade React Native](/react-native/update/upgrade-react-native.mo.md)
   - React Navigation
-    - [[MO] Unmount a component on page change *(~10 min)*](/react-native/react-navigation/unmount-compoenent-on-page-change.mo.md)
+    - [[MO] Unmount a component on page change _(~10 min)_](/react-native/react-navigation/unmount-compoenent-on-page-change.mo.md)
   - Firebase
     - [[MO] Good practices to debug events in Firebase](/react-native/firebase/debug-events.mo.md)
+- React
+  - Redux
+    - [[MO] Custom fields with redux-form](/redux/custom-redux-form-field.mo.md)
+    - [[Package] Factorise common Redux async boilerplate with redux-async-actions-factory](https://github.com/bamlab/redux-async-actions-factory)
+    - [[MO] Pass props to a container](/redux/pass-props-to-container.mo.md)
+  - Lifecycle
+    - [[MO] Trigger an action on props update](/react/lifecycle/trigger-action-on-props-update.mo.md)
+  - [[Standard] Wrinting a Component](/react/component.s.md)
 - Editors
   - Visual Studio Code
     - [[MO] Setup VSCode](/editors/vscode/setup-vscode.mo.md)
 - Security
   - [[MO] 2-Factor Authentication](/security/2FA.mo.md) (15 min)
   - [[MO] Import certificates into Match](/security/import_certificates_match.mo.md) (30 min)
+- [Front and Back-end Performance](/performance/performance-decision-flow.s.md)
+  - Performance standards
+    - [[Standard] What you should know in order to have performing applications](/performance/front/react-native-performance.s.md)
+  - Performance issues
+    - General
+      - [Simulate a network like LTE, 3G or Edge with an iPhone in hotstop](/performance/front/simulate-network-iphone.mo.md)
+    - Backend
+      - [1. How to investigate a general backend performance issue](/performance/backend/how-to-investigate-performance.mo.md)
+      - [2. Python investigation tools](/performance/backend/python-investigation-tools.mo.md)
+      - [3. Output SQL Alchemy ORM query](/performance/backend/output-sql-alchemy-orm-query.mo.md)
+    - Frontend
+      - [[MO] How to investigate front-end performance issues](/performance/front/how-to-investigate-performance.mo.md)
+  - Performance control
+    - Backend
+      - [1. Cache your routes using varnish](/performance/backend/cache-routes-using-varnish.mo.md)
+      - [2. Serve images as static files](/performance/backend/serve-images-as-static-files.mo)
+      - [3. Minimize your number of SQL queries](/performance/backend/minimize-number-sql-queries.mo.md)
+    - Front
+      - 1.  Pure components **-> [To do]**
+  - Have you a mean of keeping the performance under control?
+    - Backend
+      - [1. Monitor your backend performance with K6](https://github.com/bamlab/performance-monitoring)
 - Ops
   - [[MO] Setup HTTPS on your docker environment](/ops/docker/deploy-with-https.mo.md) (10 min)
-
